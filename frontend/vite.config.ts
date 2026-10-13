@@ -7,6 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/sessoes': 'http://localhost:5019',
+      '/configuracao': 'http://localhost:5019',
     },
   },
 })
