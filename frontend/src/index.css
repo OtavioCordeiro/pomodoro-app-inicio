@@ -1,0 +1,59 @@
+:root {
+  --fundo: #f6f4f1;
+  --texto: #1f1d1a;
+  --suave: #6f6a63;
+  --destaque: #d9472f;
+  color-scheme: light;
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  color: var(--texto);
+  background: var(--fundo);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fundo: #171614;
+    --texto: #f1eee9;
+    --suave: #a29c93;
+    --destaque: #f06a52;
+    color-scheme: dark;
+  }
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+
+.pagina { max-width: 420px; margin: 0 auto; padding: 48px 16px; text-align: center; }
+h1 { font-size: 22px; margin: 0; }
+button:disabled.tipo { opacity: 0.4; }
+
+.tempo { font-size: 96px; font-weight: 700; margin: 24px 0 0; font-variant-numeric: tabular-nums; }
+.estado { color: var(--suave); font-size: 18px; margin: 0 0 32px; }
+
+.botoes { display: flex; gap: 8px; justify-content: center; }
+button {
+  font: inherit;
+  padding: 10px 18px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--destaque);
+  color: #fff;
+  cursor: pointer;
+}
+button:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.erro { color: var(--destaque); margin-top: 24px; }
+
+.cabecalho { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; }
+.icone { background: transparent; color: var(--texto); font-size: 22px; padding: 4px 10px; }
+
+.tipo { font-size: 20px; font-weight: 600; color: var(--destaque); margin: 0; }
+
+.secundario { background: transparent; color: var(--texto); border: 1px solid var(--suave); }
+
+.modal { border: 0; border-radius: 12px; padding: 24px; width: min(360px, calc(100vw - 32px)); background: var(--fundo); color: var(--texto); }
+.modal::backdrop { background: rgba(0, 0, 0, 0.5); }
+.modal h2 { font-size: 18px; margin: 0 0 16px; }
+.modal label { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 12px; }
+.modal input[type="number"] { font: inherit; width: 80px; padding: 6px 8px; border-radius: 8px; border: 1px solid var(--suave); background: transparent; color: var(--texto); }
+.modal .botoes { margin-top: 20px; justify-content: flex-end; }
+.botoes--baixo { margin-top: 12px; }
